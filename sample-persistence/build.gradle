@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '1.5.1.RELEASE'
+    id 'com.ewerk.gradle.plugins.querydsl' version '1.0.8'
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'com.ewerk.gradle.plugins.querydsl'
+
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
+bootRepackage {
+    enabled = false
+}
+
+dependencies {
+    compile project(':sample-core')
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-java8
+    compile group: 'org.hibernate', name: 'hibernate-java8', version: '5.2.7.Final'
+
+    // https://mvnrepository.com/artifact/com.querydsl/querydsl-jpa
+    compile group: 'com.querydsl', name: 'querydsl-jpa', version: '4.1.4'
+
+    // https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter
+    compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.2.0'
+
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.40'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir "${project.buildDir}/generated-sources/java"
+        }
+    }
+}
+
+querydsl {
+    jpa = true
+    querydslSourcesDir = "${project.buildDir}/generated-sources/java"
+}

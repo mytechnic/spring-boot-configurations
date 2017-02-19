@@ -1,0 +1,11 @@
+allprojects {
+    group = 'com.mytechnic.spring-boot-configurations'
+    version = '0.0.1'
+}
+
+subprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}

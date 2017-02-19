@@ -1,0 +1,12 @@
+<!--?xml version="1.0" encoding="UTF-8" ?-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mytechnic.sample.persistence.mapper.UserMapper">
+
+    <select id="findOne" resultType="com.mytechnic.sample.persistence.mapper.dto.UserDto">
+        SELECT user_id, grade, status, email, password, gender, updated, created
+        FROM user
+        WHERE user_id = #{userid}
+    </select>
+
+</mapper>
