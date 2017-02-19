@@ -12,8 +12,8 @@ import java.time.LocalDateTime;
  * @author : mytechnic@gmail.com
  * @since : 2017-02-19
  */
-@AllArgsConstructor
-@NoArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 @Builder
 @Getter
 @Setter
