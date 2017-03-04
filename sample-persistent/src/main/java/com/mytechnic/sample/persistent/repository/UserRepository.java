@@ -10,4 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface UserRepository extends JpaRepository<UserEntity, Integer>, UserRepositoryCustom {
 
 	UserEntity findByEmail(String email);
+
+	Long deleteByEmail(String email);
 }

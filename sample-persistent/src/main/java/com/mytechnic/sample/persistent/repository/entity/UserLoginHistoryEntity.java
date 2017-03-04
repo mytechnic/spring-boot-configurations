@@ -29,7 +29,7 @@ public class UserLoginHistoryEntity {
 	@Column(name = "created")
 	private LocalDateTime created;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_id", insertable = false, updatable = false)
 	private UserEntity userEntity;
 }

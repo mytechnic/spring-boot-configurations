@@ -20,7 +20,7 @@ public class UserLoginHistoryRepositoryTest extends PersistentApplicationTest {
 
 	@Test
 	@Transactional
-	public void find() {
+	public void findTest() {
 
 		UserLoginHistoryEntity userLoginHistoryEntityList = userLoginHistoryRepository.findOne(1);
 

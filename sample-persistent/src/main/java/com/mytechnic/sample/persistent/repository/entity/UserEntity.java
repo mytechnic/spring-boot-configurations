@@ -52,6 +52,6 @@ public class UserEntity implements Serializable {
 	@Column(name = "created")
 	private LocalDateTime created;
 
-	@OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY)
-	private List<UserLoginHistoryEntity> userLoginHistoryEntity;
+	@OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<UserLoginHistoryEntity> userLoginHistoryEntityList;
 }
