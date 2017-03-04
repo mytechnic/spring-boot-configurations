@@ -16,7 +16,7 @@ springBoot {
 }
 
 dependencies {
-    compile project(':sample-persistence')
+    compile project(':sample-persistent')
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
     //compile group: 'org.springframework.boot', name: 'spring-boot-starter-security'

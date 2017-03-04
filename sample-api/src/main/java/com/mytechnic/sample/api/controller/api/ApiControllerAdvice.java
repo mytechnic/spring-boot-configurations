@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author : mytechnic@gmail.com
- * @since : 2017-02-19
+ * @since : 2017.02.19.
  */
 @RestControllerAdvice(basePackageClasses = ApiControllerAdvice.class)
 public class ApiControllerAdvice extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(BusinessException.class)
-    public ApiResponse<BusinessException> businessException(HttpServletResponse response, BusinessException e) {
-        response.setStatus(e.getHttpStatus().value());
-        return ApiResponse.error(e);
-    }
+	@ExceptionHandler(BusinessException.class)
+	public ApiResponse<BusinessException> businessException(HttpServletResponse response, BusinessException e) {
+		response.setStatus(e.getHttpStatus().value());
+		return ApiResponse.error(e);
+	}
 }

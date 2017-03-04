@@ -6,12 +6,12 @@ import lombok.Getter;
 
 /**
  * @author : mytechnic@gmail.com
- * @since : 2017-02-19
+ * @since : 2017.02.19.
  */
 @Builder
 @Getter
 public class UserCreateResponse {
 
-    @ApiModelProperty(value = "유저 ID", example = "1")
-    private Integer userId;
+	@ApiModelProperty(value = "유저 ID", example = "1")
+	private Integer userId;
 }

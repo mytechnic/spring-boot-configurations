@@ -17,29 +17,29 @@ import java.util.Set;
 
 /**
  * @author : mytechnic@gmail.com
- * @since : 2017-02-19
+ * @since : 2017.02.19.
  */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
 
-    @Bean
-    public Docket api() {
+	@Bean
+	public Docket api() {
 
-        Set<String> producesList = new HashSet<>();
-        producesList.add("application/json");
+		Set<String> producesList = new HashSet<>();
+		producesList.add("application/json");
 
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                .apis(RequestHandlerSelectors.basePackage(ApiControllerAdvice.class.getPackage().getName()))
-                .paths(PathSelectors.ant("/api/**"))
-                .build().apiInfo(apiInfo()).produces(producesList);
-    }
+		return new Docket(DocumentationType.SWAGGER_2)
+			.select()
+			.apis(RequestHandlerSelectors.basePackage(ApiControllerAdvice.class.getPackage().getName()))
+			.paths(PathSelectors.ant("/api/**"))
+			.build().apiInfo(apiInfo()).produces(producesList);
+	}
 
-    private ApiInfo apiInfo() {
-        return new ApiInfoBuilder()
-                .title("Spring Boot Configurations")
-                .contact(new Contact("mytechnic", "https://mytechnic.com", "mytechnic@gmail.com"))
-                .build();
-    }
+	private ApiInfo apiInfo() {
+		return new ApiInfoBuilder()
+			.title("Spring Boot Configurations")
+			.contact(new Contact("mytechnic", "https://mytechnic.com", "mytechnic@gmail.com"))
+			.build();
+	}
 }
